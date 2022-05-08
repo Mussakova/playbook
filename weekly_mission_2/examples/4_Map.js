@@ -8,3 +8,8 @@ const numbersSquare = numbers4.map(function(num){ return num * num})
 //const numbersSquare = numbers4.map((num) => return num * num)
 console.log("Ejemplo 4: Imprimiendo la lista de elementos al cuadrado")
 console.log(numbersSquare)
+
+// Un ejemplo que pensé con toUpperCase
+const abc = ['a', 'b', 'c', 'd', 'e', 'f']
+const modifiedABC = abc.map( ((i)=> i.toUpperCase()))
+console.log(modifiedABC);
