@@ -19,9 +19,3 @@ const patz = amigos.find((amigos)=> amigos.lugar === 'Pátzcuaro')
 console.log(`${patz.nombre} es la primera persona que aparece de mis amigos en Pátzcuaro`);
 const more = amigos.find((amigos)=> amigos.lugar === 'Morelia')
 console.log(`${more.nombre} es la primera persona que aparece de mis amigos en Morelia`);
-/*     if(amigos.lugar === 'Pátzcuaro'){
-        return amigos.nombre
-    } else{
-        false
-    }
-*/
