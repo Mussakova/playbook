@@ -24,7 +24,7 @@ class amigo{
       this.name = name
       this.age = age
       this.place = place
-      this.status = 'Amigua ❤'
+      this.status = 'Amiga ❤'
       this.date = new Date()
   }
   getInfo(){
