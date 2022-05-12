@@ -8,4 +8,4 @@ export default class Explorer{
   getNameAndUsername(){
    return `Explorer ${this. name}, username: ${this.username}`
   }
-}
+} 
