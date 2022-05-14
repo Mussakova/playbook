@@ -52,3 +52,23 @@ console.log( Issue.labels);
 console.log(Issue.getGeneralInfo());
 console.log(Issue.getTitleAndAuthor());
 
+// Ejercicio de Pull Request
+const PullRequest = {
+    title: "Nueva Seccion de Comedores",
+    author: 'Hirepan',
+    branchName: 'Comedores y Cocina',
+    dateCreated: '14 de Mayo de 2022',
+    status:'Building',
+    repositoryNameAssociated: 'Muebles y Madera',
+
+    getStatus(){
+        return `El estado de este repositorio es: "${this.status}"`
+    },
+    getTitleAndAutor(){
+        return `El autor de este Pull Request: "${this.title}", es ${this.author}`
+    },
+}
+console.log(PullRequest.title);
+console.log(PullRequest.branchName);
+console.log(PullRequest.getStatus());
+console.log(PullRequest.getTitleAndAutor());
