@@ -72,3 +72,32 @@ console.log(PullRequest.title);
 console.log(PullRequest.branchName);
 console.log(PullRequest.getStatus());
 console.log(PullRequest.getTitleAndAutor());
+
+// Añadiendo Facebook. Jaja
+const fb ={
+    user: {name: "Hirepan", nickname: "Sgy", bio: "...", age: 23, job: 'Student'},
+    posts: {meta_img:"camera upload", description:"tumblr", reactions: {feliz:'hahaha', triste:'sad', enojado:'angry'}, share: 'button share'},
+    messages: {contacts: 'list of contacts', container:'blank space', send: 'Send button'}
+}
+console.log(fb.user.name);
+console.log(fb.posts.reactions.feliz);
+
+// Añadiendo Twitter
+const Twitter = {
+    user: {name: "Hirepan", nickname: "Sgy", bio: "...", age: 23},
+    trending:{date: Date(), topic:'Ecology', retweets: 4321},  
+    hashtag: '#Ecology'
+}
+console.log(Twitter.trending.date);
+console.log(Twitter.user.nickname);
+// Añadiendo Ubber. No he usado uber no conozco la aplicación. Pero dejo lo que me imagino
+const ubber = {
+    mapas: {ubicacionActual: `import GPS location`, arriveDestiny: 'inserte ubicación en el mapa'},
+    drivers_available: ['driver1', 'driver2', 'driver3'],
+    choosing: {distanceAway: ['far', 'Very Far', 'Very Far Away', 'Close'], price:{dlls10:'cheap', dlls50:'expensive', dlls200:'Slv, Vuela o qué onda Jajaja'}}
+}
+console.log(ubber.choosing.distanceAway);
+console.log(ubber.choosing.price);
+console.log(ubber.mapas);
+console.log(ubber.drivers_available);
+    
