@@ -90,6 +90,8 @@ const Twitter = {
 }
 console.log(Twitter.trending.date);
 console.log(Twitter.user.nickname);
+
+
 // Añadiendo Ubber. No he usado uber no conozco la aplicación. Pero dejo lo que me imagino
 const ubber = {
     mapas: {ubicacionActual: `import GPS location`, arriveDestiny: 'inserte ubicación en el mapa'},
