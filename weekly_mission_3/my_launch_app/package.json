@@ -1,0 +1,15 @@
+{
+  "name": "my_launch_app",
+  "version": "1.0.0",
+  "description": "Proyecto LaunchX JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/jest",
+    "start": "node index.js"
+  },
+  "author": "Hirepan",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
