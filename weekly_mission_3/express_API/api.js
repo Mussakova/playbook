@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+// Un endpoint es la URL de una API que responde a una petición
 // Usando objeto express
 const express = require('express')
 // App de Express
@@ -34,7 +35,7 @@ app.get('/v1/explorers/:id', (req, res)=>{
 // Nótese que cualquier entrada ':id' que se use, regresará la 'const explorer'
 
 
-// 2.1 GET Un Endpoint que devuelva el ID del Endpoint como 'value' de una 'key'
+// 2.1 GET Un Endpoint que devuelva el parámetro 'ID' del Endpoint como 'value' de una 'key'
 app.get('/v2/explorers/:idEndpoint', (req, res)=>{
     console.log(`API Explorers GET request ${new Date()}`)
     console.log(`Getting explorer with id ${req.params.id}`)
@@ -43,7 +44,17 @@ app.get('/v2/explorers/:idEndpoint', (req, res)=>{
     res.status(200).json({explorer, idEndpoint})
 })
 
-// 
+// 2.2 Un Endpoint que reciba 2 parámetros y los devuelva como valores de una llave
+
+app.get('v3/:idExplorer/:idCurso', (req, res) =>{
+    const explorer = {id_explorer: 'h', name: 'Hirepan Muss'}
+    const {idExplorer, idCurso } = req.params;
+    res.json({
+        idExplorer,
+        idCurso,
+        explorer
+    })
+})
 
 // 3. POST Creando un endpoint que se encargue de crear un explorer
 app.post('v1/explorers', (req, res)=>{
