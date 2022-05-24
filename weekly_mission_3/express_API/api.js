@@ -23,9 +23,17 @@ res.status(200).json(explorers)
 
 }
 )
-// Creando un endpoint que se encargue de crear un explorer
-app.post('./v1/explorers', (req, res)=>{
-    console.log(`API Explorers POST request ${new Date()}`);
-    const requestBody = req.body //parámetros de un cliente
-    res.status(201).json({message: 'Created'})
+// GET Creando un endpoint que regrese un explorer mediante un ID
+app.get('v1/explorers/:id', (req, res)=>{
+    console.log(`API Explorers GET request ${new Date()}`)
+    console.log(`Getting explorer with id ${new Date()}`)
+    const explorer = {id:1, name: 'Hirepan Muss'}
+    res.status(200).json(explorer)
 })
+
+// POST Creando un endpoint que se encargue de crear un explorer
+// app.post('./v1/explorers', (req, res)=>{
+//     console.log(`API Explorers POST request ${new Date()}`);
+//     const requestBody = req.body //parámetros de un cliente
+//     res.status(201).json({message: 'Created'})
+// })
