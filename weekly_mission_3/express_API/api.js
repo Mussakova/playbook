@@ -24,12 +24,13 @@ res.status(200).json(explorers)
 }
 )
 // GET Creando un endpoint que regrese un explorer mediante un ID
-app.get('v1/explorers/:id', (req, res)=>{
+app.get('/v1/Explorers/:id', (req, res)=>{
     console.log(`API Explorers GET request ${new Date()}`)
-    console.log(`Getting explorer with id ${new Date()}`)
-    const explorer = {id:1, name: 'Hirepan Muss'}
+    console.log(`Getting explorer with id ${req.params.id}`)
+    const explorer = {id: 'h', name: 'Hirepan Muss'}
     res.status(200).json(explorer)
 })
+// 
 
 // POST Creando un endpoint que se encargue de crear un explorer
 // app.post('./v1/explorers', (req, res)=>{
