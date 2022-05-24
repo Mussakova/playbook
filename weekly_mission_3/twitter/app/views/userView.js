@@ -37,10 +37,8 @@ class userView {
 // const userService = require('../services/userService')
 // const payload = {id:22,username: 'Mussakova', name: 'Hirepan'}
 // console.log(creating(payload));
-
 // const result = userService.create(payload)
 // console.log(result);
-
 // let x = Object.values(payload)
 // console.log(x);
 

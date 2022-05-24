@@ -21,6 +21,7 @@ describe('Testing de UserView para agregar vistas',()=>{
     test('4. Create a user by a given valid payload', ()=>{
         const payload = {id:22, username: 'Mussakova', name: 'Hirepan'}
         const result = userView.createUser(payload)
+        
         expect(result._name).toBe('Hirepan')
         expect(result._username).toBe('Mussakova')
         expect(result._id).toBe(22)
