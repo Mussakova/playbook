@@ -10,7 +10,7 @@ const port = 3000
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
-// GET Crea un endpoint que regrese una lista de explorers
+// 1. GET Crea un endpoint que regrese una lista de explorers
 app.get('/v1/explorers', (req, res)=>{
     console.log(`API Explorers GET ALL request ${new Date()}`);
 const explorer1 = {id: 1, name: 'Hirepan 1'}
@@ -24,7 +24,7 @@ res.status(200).json(explorers)
 
 }
 )
-// GET Creando un endpoint que regrese un explorer mediante un ID
+// 2. GET Creando un endpoint que regrese un explorer mediante un ID
 app.get('/v1/explorers/:id', (req, res)=>{
     console.log(`API Explorers GET request ${new Date()}`)
     console.log(`Getting explorer with id ${req.params.id}`)
@@ -32,9 +32,18 @@ app.get('/v1/explorers/:id', (req, res)=>{
     res.status(200).json(explorer)
 })
 
-// POST Creando un endpoint que se encargue de crear un explorer
+// 3. POST Creando un endpoint que se encargue de crear un explorer
 app.post('v1/explorers', (req, res)=>{
     console.log(`API Explorers POST request ${new Date()}`);
     const requestBody = req.body //parámetros de un cliente
     res.status(201).json({message: 'Created'})
+})
+
+// 4. Crea un endpoint que se encargue de actualizar un explorer
+
+app.put('v1/explorers/:id', (req, res)=>{
+    console.log(`API Explorers PUT Request ${new Date()}`);
+    console.log(`Update explorer with id ${req.params.id}`);
+    const requestBody = req.body //parámetros de un cliente
+    res.status(200).json({message: "Updated"})
 })
