@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // Usando objeto express
 const express = require('express')
 // App de Express
@@ -20,8 +21,7 @@ const explorer4 = {id: 4, name: 'Hirepan 4'}
 const explorer5 = {id: 5, name: 'Hirepan 5'}
 const explorer6 = {id: 6, name: 'Hirepan 6'}
 const explorers = [explorer1, explorer2, explorer3, explorer4, explorer5, explorer6]
-res.status(200).json(explorers)    
-
+res.status(200).json(explorers)//.status Código de la respuesta y res.json responde en formato JSON
 }
 )
 // 2. GET Creando un endpoint que regrese un explorer mediante un ID
@@ -31,6 +31,19 @@ app.get('/v1/explorers/:id', (req, res)=>{
     const explorer = {id: 'h', name: 'Hirepan Muss'}
     res.status(200).json(explorer)
 })
+// Nótese que cualquier entrada ':id' que se use, regresará la 'const explorer'
+
+
+// 2.1 GET Un Endpoint que devuelva el ID del Endpoint como 'value' de una 'key'
+app.get('/v2/explorers/:idEndpoint', (req, res)=>{
+    console.log(`API Explorers GET request ${new Date()}`)
+    console.log(`Getting explorer with id ${req.params.id}`)
+    const {idEndpoint} = req.params //de todos los parámetros del request, guarda el 'idEndpoint'
+    const explorer = {id_explorer: 'h', name: 'Hirepan Muss'}
+    res.status(200).json({explorer, idEndpoint})
+})
+
+// 
 
 // 3. POST Creando un endpoint que se encargue de crear un explorer
 app.post('v1/explorers', (req, res)=>{
