@@ -44,30 +44,37 @@ app.get('/v2/explorers/:idEndpoint', (req, res)=>{
     res.status(200).json({explorer, idEndpoint})
 })
 
-// 2.2 Un Endpoint que reciba 2 parámetros y los devuelva como valores de una llave
+// 2.2 Un Endpoint que reciba 2 parámetros dinámicos y los devuelva como valores de una llave
 
-app.get('v3/:idExplorer/:idCurso', (req, res) =>{
+app.get('/v3/:idExplorer/v/:idCurso', (req, res) =>{
+    console.log(`API Explorers GET 2 params ${new Date()}`)
     const explorer = {id_explorer: 'h', name: 'Hirepan Muss'}
     const {idExplorer, idCurso } = req.params;
-    res.json({
-        idExplorer,
-        idCurso,
-        explorer
+    res.status(200).json({idExplorer, idCurso, explorer
     })
 })
 
 // 3. POST Creando un endpoint que se encargue de crear un explorer
-app.post('v1/explorers', (req, res)=>{
+app.post('/v1/explorers', (req, res)=>{
     console.log(`API Explorers POST request ${new Date()}`);
     const requestBody = req.body //parámetros de un cliente
-    res.status(201).json({message: 'Created'})
+    res.status(201).json({message: 'Created'})//Respuesta del Servidor
 })
 
 // 4. Crea un endpoint que se encargue de actualizar un explorer
 
-app.put('v1/explorers/:id', (req, res)=>{
+app.put('/v1/explorers/:id', (req, res)=>{
     console.log(`API Explorers PUT Request ${new Date()}`);
     console.log(`Update explorer with id ${req.params.id}`);
     const requestBody = req.body //parámetros de un cliente
-    res.status(200).json({message: "Updated"})
+    res.status(200).json({message: "Updated"})//Respuesta del servidor
+})
+
+// 5. DELETE Crea un Endpoint para eliminar un explorer
+
+app.delete('/v1/explorers/:id', (req, res)=>{
+    console.log(`API Explorers DELETE Request ${new Date()}`);
+    console.log(`Delete explorer with id ${req.params}`);
+    const requestBody =req.body //Parámetros de un cliente
+    res.status(200).json({message: 'Deleted'})//Esto es lo que responde el servidor
 })
